@@ -1,0 +1,46 @@
+{% load static %}
+{% include 'shop/navbar2.html' %}
+{% include "shop/banner.html" %}
+{% block title %}{% endblock title %}
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/tooplate-main.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <!--<link rel="stylesheet" href="{% static 'assets/css/login.css' %}">-->
+     
+
+<!--Tooplate 2114 Pixie
+https://www.tooplate.com/view/2114-pixie-->
+
+  </head>
+{% block content %}
+<body>
+    
+     <!-- Pre Header -->
+    <div id="pre-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <span>Suspendisse laoreet magna vel diam lobortis imperdiet</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock  %}
+        
+        
+{% include "shop/script.html" %}
+{% include "shop/subscribe.html" %}
+{% include "shop/footer.html" %}
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+{% load static %}
+{% include 'shop/navbar.html' %}
+{% include 'shop/script.html' %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}MY shop{% endblock %}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <!--The following are external styles of Pixie app-->
+        
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/tooplate-main.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+     <link rel="stylesheet" href="{% static 'assets/css/login.css' %}">
+    </head>
+    <body>
+        <div id='header'>
+            <a href="/" class="logo">My shop</a>
+        </div>
+        <div id="subheader">
+            <div class="cart">
+                    {% with total_items=cart|length  %}
+                    {% if total_items > 0 %}
+                    Your cart:
+                    <a href="{% url "cart:cart_detail" %}">
+                        {{ total_items }} item{{ total_items|pluralize }},
+                        $${{ cart.get_total_price }}
+                    </a>
+                    {% else %}
+                ${{ cart|length }}
+                    {% endif %}
+                    {% endwith %}
+            </div>
+        </div>
+        <div id="content">
+            {% block content %}{% endblock  %}
+        </div>
+        
+        <script src="" async defer></script>
+    </body>
+</html>
+

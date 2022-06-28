@@ -1,0 +1,54 @@
+{% extends 'shop/base2.html' %}
+{% load static %}
+{% block title %}
+ {% if category %}
+ {{ category.name }}
+ 
+ {% else %}
+ Product
+ {% endif %}
+ 
+{% endblock %}
+{% block content  %}
+      <!-- Featured Starts Here -->
+        <div class="featured-items">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="section-heading">
+                  <div class="line-dec"></div>
+                  <h1>Featured Items</h1>
+
+                </div>
+              </div>
+          
+              <div class="col-md-12">
+                <div class="owl-carousel owl-theme">
+                {% for product in products %}
+                  
+                    <div class="featured-item">
+                      <a href="{{ product.get_absolute_url }}">
+                                <img src="{% if product.image %}{{ product.image.url }}
+                                {% else %}{% static "img.no_img.png" %}{% endif %}">
+                        </a>
+                      <h4>
+                            <a href="{{ product.get_absolute_url }}">
+                                {{ product.name }}</a>
+                        
+                      </h4>
+                      <h6>${{ product.price }}</h6>
+                    </div>
+                  
+                {% endfor %}
+                
+                </div>
+              </div>
+            
+            </div>
+          </div>
+        </div>
+
+{% endblock  %}
+
+
+   

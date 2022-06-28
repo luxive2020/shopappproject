@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "~=3.1.0"
+pillow = "*"
+celery = "==4.4.2"
+flower = "*"
+braintree = "==3.59.0"
+weasyprint = "==51"
+reportlab = "*"
+gunicorn = "==19.9.0"
+waitress = "*"
+django-auth = "*"
+django-allauth = "*"
+
+[dev-packages]
+autopep8 = "*"
+
+[requires]
+python_version = "3.9"
